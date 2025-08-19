@@ -15,6 +15,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import com.Timelyne.dto.LoginRequest;
+import com.Timelyne.dto.SignupRequest;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -73,7 +76,7 @@ public class AuthController {
         return response;
     }
 
-    // DTOs
+   /*  // DTOs
     @Getter @Setter
     static class LoginRequest {
         private String email;
@@ -84,5 +87,5 @@ public class AuthController {
     static class SignupRequest {
         private String email;
         private String password;
-    }
+    }  */
 }
