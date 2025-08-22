@@ -20,9 +20,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+            // CSRF blocks POST/PUT/DELETE without tokens. Disable for stateless APIs / Postman testing.
             .csrf(csrf -> csrf.disable())
+            // Authorization rules: open auth endpoints AND (temporarily) events for testing
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/signup", "/api/login").permitAll()
+                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/events/**").permitAll()  // <-- TEMP for testing
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // 🔒 No session
