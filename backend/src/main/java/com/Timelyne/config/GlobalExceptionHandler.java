@@ -57,7 +57,7 @@ public class GlobalExceptionHandler {
                 "Conflict",
                 ex.getMessage(),
                 req.getRequestURI()
-        );
+        ); 
         return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
     }
 

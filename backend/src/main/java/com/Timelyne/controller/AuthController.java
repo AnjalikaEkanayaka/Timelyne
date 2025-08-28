@@ -4,10 +4,6 @@ import com.Timelyne.model.User;
 import com.Timelyne.repository.UserRepository;
 import com.Timelyne.util.JwtUtil;
 
-// import jakarta.validation.Valid;
-// import lombok.Getter;
-// import lombok.Setter;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
